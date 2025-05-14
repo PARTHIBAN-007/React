@@ -2,26 +2,23 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  let [listdata, setlistdata] = useState(["Data1", "world", "Data3"]);
 
+  let [count,SetCount] = useState(0);
+
+  function increment(){
+    SetCount(count+1)
+  }
+
+  function decrement(){
+    SetCount(count-1)
+  }
   return (
     <>
-      <h1>Hello World</h1>
       <div className='p-4'>
-        <input placeholder='Input some Value' className='rounded-lg border-2' />
-        <button className='m-2'>Add</button>
-
-        <ol>
-          {listdata.map((data, index) => (
-            <li key={index} className='my-2'>
-              <div className='flex items-center gap-4'>
-                <span>{data}</span>
-                <button className='bg-blue-500 text-white px-2 rounded'>Edit</button>
-                <button className='bg-red-500 text-white px-2 rounded'>Delete</button>
-              </div>
-            </li>
-          ))}
-        </ol>
+        <h1 className='text-green-600 font-bold my-4'>Counter APP</h1>
+        <h1 className='text-orange-500 m-4'>{count}</h1>
+        <button className="bg-green-600 p-4 rounded-lg m-4" onClick={increment}>Increment</button>
+        <button className="bg-red-600 p-4 rounded-lg m-4" onClick={decrement}>Decrement</button>
       </div>
     </>
   );
