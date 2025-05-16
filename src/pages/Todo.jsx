@@ -33,6 +33,10 @@ export const Todo = () => {
     const deleteTodo = (index) =>{
         const NewTodos = todos.filter((_,i)=> i!=index);
         setTodos(NewTodos)
+        if (isEditing&&index===editIndex){
+            setIsEditing(false);
+            setInputData("")
+        }
     }
 
  
@@ -45,7 +49,7 @@ export const Todo = () => {
                 <input value={inputData}
                 onChange={(e)=>setInputData(e.target.value)}
                 placeholder='Input Value' className='rounded-lg border-2 border-indigo-600'></input>
-                <button  onClick = {addTodo} className='mx-4 bg-green-400 rounded-lg px-4 py-2'>Add</button>
+                <button  onClick = {addTodo} className='mx-4 bg-green-400 rounded-lg px-4 py-2'>{isEditing? "Save" : "Add"}</button>
             </div>
             <ul className='m-6'>
                 {todos.map((dataitem,index)=>(
