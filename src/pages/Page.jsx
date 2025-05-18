@@ -1,34 +1,40 @@
 import React from 'react'
-import { useState } from 'react'
+import { useEffect,useState } from 'react'
+import axios from 'axios';
+
 
 import { useNavigate } from 'react-router-dom';
 
 const Hello = () => {
 
-    let [input,setInput] = useState("");
+    const [feedback, setFeedback] = useState([]);
 
-
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/userdata')
+      .then(res => setFeedback(res.data))
+      .catch(err => console.error(err));
+  }, []);
     let navigate = useNavigate();
 
-    
-    let handlechange = (e) =>{
-        setInput(e.target.value)
-    }
+  
 
-    let handlenavigate = () =>{
-        navigate(`/main/${input}`)
+    let handlenavigate = (person) =>{
+        navigate(`/main/${person}`)
     } 
 
     
   return (
-    <>
-        <h1>{name}</h1>
-        <input placeholder='Input for Navigation' onChange={handlechange}></input>
-        
-        <button onClick={handlenavigate}> Navigate</button>
-
-    </>
-  )
-}
+    <div>
+      <h1>Feedback Data</h1>
+      {feedback.map((item, index) => (
+        <div key={index}>
+          <h3 onClick={()=>{handlenavigate(item.username)}}>{item.username}</h3>
+          
+          <hr />
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default Hello;

@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Counter from './pages/counter';
+import Counter from './pages/Counter';
 import Hello from './pages/page';
 import { Todo } from './pages/Todo';
 import AudioRecorder from './pages/AudioRecorder';
