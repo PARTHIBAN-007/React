@@ -55,7 +55,6 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
   const content = ['Hello1', 'helll2'];
   const pending = ['1', '2'];
   const [show, setShow] = useState(false);
