@@ -1,8 +1,6 @@
 import React, { createContext } from 'react'
 import { useState } from 'react'
 import Reset from './Reset'
-export let countcontext = createContext()
-// import { useParams } from 'react-router-dom';
 const Counter = () => {
 
     let [count,setCount] = useState(0);
