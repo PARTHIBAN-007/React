@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React from 'react'
 import { useState } from 'react'
 import Reset from './Reset'
 const Counter = () => {
