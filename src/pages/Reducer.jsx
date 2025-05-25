@@ -1,12 +1,10 @@
 import React, { useReducer } from 'react';
 
-// Initial state
 const initialState = {
   count: 0,
   showText: true,
 };
 
-// Reducer function
 const reducer = (state, action) => {
   switch (action.type) {
     case 'INCREMENT':
