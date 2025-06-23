@@ -1,107 +1,47 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-export default function Admin() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+const MinimalResponsiveLayout = () => {
+  const [showSidebar, setShowSidebar] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
-      {/* Navbar */}
-      <header className="bg-white shadow-sm p-4 flex justify-between items-center sticky top-0 z-10">
-        <div className="flex items-center space-x-4">
-          <button
-            className="md:hidden text-gray-600 hover:text-indigo-600"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-          >
-            {sidebarOpen ? "✕" : "☰"}
+    <div className="min-h-screen flex bg-gray-50">
+      <aside className={`hidden lg:block fixed top-0 left-0 h-full w-52 bg-white shadow transition-transform duration-300 ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}>
+        <nav className="p-4 space-y-3">
+          <a href="#" className="block text-sm hover:text-green-500">Dashboard</a>
+          <a href="#" className="block text-sm hover:text-green-500">Users</a>
+          <a href="#" className="block text-sm hover:text-green-500">Settings</a>
+        </nav>
+      </aside>
+
+      <div className="flex-1 lg:ml-0">
+        <header className="flex justify-between items-center px-4 py-3 bg-white shadow relative">
+          <button onClick={() => setShowSidebar(!showSidebar)} className="hidden lg:block text-gray-600">
+            ☰
           </button>
-          <h1 className="text-xl font-bold text-gray-800">Admin Dashboard</h1>
-        </div>
-        <div className="space-x-4">
-          <button className="text-sm font-medium text-gray-600 hover:text-indigo-600">Profile</button>
-          <button className="text-sm font-medium text-gray-600 hover:text-indigo-600">Logout</button>
-        </div>
-      </header>
 
-      <div className="flex flex-1">
-        {/* Sidebar */}
-        <aside
-          className={`bg-white shadow-md p-6 w-64 md:block fixed md:static inset-y-0 left-0 transform md:translate-x-0 transition-transform duration-200 ease-in-out z-20 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
-        >
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Menu</h2>
-          <nav className="space-y-3">
-            <a href="#" className="block hover:text-indigo-600">Dashboard</a>
-            <a href="#" className="block hover:text-indigo-600">Users</a>
-            <a href="#" className="block hover:text-indigo-600">Settings</a>
-            <a href="#" className="block hover:text-indigo-600">Reports</a>
-          </nav>
-        </aside>
+          <h1 className="text-lg font-semibold text-green-600">My App</h1>
 
-        {/* Overlay for mobile sidebar */}
-        {sidebarOpen && (
-          <div
-            className="fixed inset-0 bg-black opacity-30 z-10 md:hidden"
-            onClick={() => setSidebarOpen(false)}
-          ></div>
-        )}
+          <button onClick={() => setShowMobileMenu(!showMobileMenu)} className="lg:hidden text-gray-600">
+            ☰
+          </button>
 
-        {/* Main Content */}
-        <main className="flex-1 container  space-y-8 mx-4">
-          <section>
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Statistics</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="text-sm font-medium text-gray-600">Users</h3>
-                <p className="text-2xl font-bold text-gray-900">1,250</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="text-sm font-medium text-gray-600">Revenue</h3>
-                <p className="text-2xl font-bold text-gray-900">$34,000</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="text-sm font-medium text-gray-600">Sessions</h3>
-                <p className="text-2xl font-bold text-gray-900">8,192</p>
-              </div>
+          {showMobileMenu && (
+            <div className="absolute right-4 top-12 bg-white shadow rounded-md w-40 py-2 z-50">
+              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">Dashboard</a>
+              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">Users</a>
+              <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-100">Settings</a>
             </div>
-          </section>
+          )}
+        </header>
 
-          {/* Form Section */}
-          <section>
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Add New Record</h2>
-            <form className="bg-white p-6 rounded-lg shadow space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                <input
-                  type="text"
-                  placeholder="John Doe"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input
-                  type="email"
-                  placeholder="john@example.com"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Role</label>
-                <select className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500">
-                  <option>User</option>
-                  <option>Admin</option>
-                  <option>Editor</option>
-                </select>
-              </div>
-              <button
-                type="submit"
-                className="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition"
-              >
-                Submit
-              </button>
-            </form>
-          </section>
+        <main className="p-4 mt-4">
+          <h2 className="text-xl font-semibold mb-2">Welcome</h2>
+          <p className="text-sm text-gray-600">This is a clean responsive layout with compact navigation behavior.</p>
         </main>
       </div>
     </div>
   );
-}
+};
+
+export default MinimalResponsiveLayout;

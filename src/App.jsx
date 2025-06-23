@@ -6,11 +6,11 @@ import { Todo } from './pages/Todo';
 // import AudioRecorder from './pages/AudioRecorder';
 import DynamicTabs from './pages/Tab';
 import Tabcomponent from './pages/Tabcomponent';
-import StyledPage from './pages/style';
+import MinimalResponsiveLayout from './pages/style';
 import DesignPage from './pages/design';
 import LandingPage from './pages/LandingPage';
 import AdminPage from './pages/AdminPage';
-import Admin from './pages/style';
+import NavPage from './pages/NavPage';
 
 function App() {
 
@@ -26,10 +26,11 @@ function App() {
           {/* <Route path="/recorder" element={<AudioRecorder />}></Route> */}
           <Route path="/tab" element={<DynamicTabs />}></Route>
           <Route path="/tabdata" element={<Tabcomponent />}></Route>
-          <Route path="/style" element={<Admin />}></Route>
+          <Route path="/style" element={<MinimalResponsiveLayout />}></Route>
           <Route path="/design" element={<DesignPage />}></Route>
           <Route path="/landing" element={<LandingPage />}></Route>
           <Route path="/admin" element={<AdminPage />}></Route>
+          <Route path="/nav" element={<NavPage />}></Route>
         </Routes>
       </BrowserRouter>
     </>
