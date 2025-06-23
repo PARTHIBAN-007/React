@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function AdminPage() {
+export default function Admin() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
