@@ -11,6 +11,7 @@ import DesignPage from './pages/design';
 import LandingPage from './pages/LandingPage';
 import AdminPage from './pages/AdminPage';
 import NavPage from './pages/NavPage';
+import StylishLoginPage from './pages/LoginPage';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/landing" element={<LandingPage />}></Route>
           <Route path="/admin" element={<AdminPage />}></Route>
           <Route path="/nav" element={<NavPage />}></Route>
+          <Route path="/login" element={<StylishLoginPage />}></Route>
         </Routes>
       </BrowserRouter>
     </>
