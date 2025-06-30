@@ -6,7 +6,7 @@ import { Todo } from './pages/Todo';
 // import AudioRecorder from './pages/AudioRecorder';
 import DynamicTabs from './pages/Tab';
 import Tabcomponent from './pages/Tabcomponent';
-import MinimalResponsiveLayout from './pages/style';
+import ChatPage from './pages/style';
 import DesignPage from './pages/design';
 import LandingPage from './pages/LandingPage';
 import AdminPage from './pages/AdminPage';
@@ -27,7 +27,7 @@ function App() {
           {/* <Route path="/recorder" element={<AudioRecorder />}></Route> */}
           <Route path="/tab" element={<DynamicTabs />}></Route>
           <Route path="/tabdata" element={<Tabcomponent />}></Route>
-          <Route path="/style" element={<MinimalResponsiveLayout />}></Route>
+          <Route path="/style" element={<ChatPage />}></Route>
           <Route path="/design" element={<DesignPage />}></Route>
           <Route path="/landing" element={<LandingPage />}></Route>
           <Route path="/admin" element={<AdminPage />}></Route>
