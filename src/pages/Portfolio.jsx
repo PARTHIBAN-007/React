@@ -1,52 +1,56 @@
-import React from "react";
+import React from 'react'
 
-const Portfolio = () => {
+const PortfolioPage = () => {
   return (
-    <div className="font-sans bg-gray-100 min-h-screen text-gray-800">
-      {/* Header */}
-      <header className="bg-white shadow p-6">
-        <h1 className="text-3xl font-bold">John Doe</h1>
-        <p className="text-sm text-gray-600">Frontend Developer</p>
-      </header>
-
-      {/* About Section */}
-      <section className="p-6">
-        <h2 className="text-xl font-semibold mb-2">About Me</h2>
-        <p>
-          I’m a passionate frontend developer with experience in React, Tailwind
-          CSS, and building responsive websites. I love transforming ideas into
-          pixel-perfect interfaces.
-        </p>
-      </section>
-
-      {/* Projects Section */}
-      <section className="p-6 bg-white shadow">
-        <h2 className="text-xl font-semibold mb-4">Projects</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="border p-4 rounded-lg bg-gray-50">
-            <h3 className="font-bold text-lg">Portfolio Website</h3>
-            <p>A personal portfolio to showcase my work and skills.</p>
+    <div className='min-h0screen bg-white text-black'>
+      <nav className='fixed top-0 w-full bg-white.20 backdrop-blur-md-2 border-b border-black-300'>
+        <div className='w-full mx-auto px-4 sm:px-6 lg:px-8'>
+          <div className='flex justify-between items-center py-4'> 
+            <div className='text-2xl font-bold bg-black bg-clip-text text-transparent'>Portfolio</div>
+            <div className=' md:flex- space-x-2'>
+              <a href ="#" className=' px-4  py-2 rounded-lg hover:bg-green-400 transition-colors'> Home</a>
+              <a href ="#" className=' px-4  py-2 rounded-lg hover:bg-green-400 transition-colors'> About</a>
+              <a href ="#" className=' px-4  py-2 rounded-lg hover:bg-green-400 transition-colors'> Skills</a>
+              <a href ="#" className=' px-4  py-2 rounded-lg hover:bg-green-400 transition-colors'> Projects</a>
+              <a href ="#" className=' px-4  py-2 rounded-lg hover:bg-green-400 transition-colors'> Contact</a>
+            </div>
           </div>
-          <div className="border p-4 rounded-lg bg-gray-50">
-            <h3 className="font-bold text-lg">Weather App</h3>
-            <p>A React app that fetches and displays real-time weather data.</p>
+        </div>
+      </nav>
+      <section className='pt-24 pb-10 px-4 '>
+        <div className='w-full mx-auto text-center'>
+          <div className='mb-8'>
+            <div className='w-32 h-32 mb-4 mx-auto flex rounded-full items-center justify-center text-4xl font-bold shadow-2xl transition-all hover:scale-110'>
+              JD
+            </div>
+            <h1 className='text-5xl txt-grey-300 mb-4 bg-clip-text text-transparent bg-indigo-400'>
+              John Doe
+            </h1>
+            <p className='text-xl text-grey-300 mb-4'>
+              AI/ML
+            </p>
+            <div className='flex justify-center space-x-6'>
+              <a className='p-3 bg-white rounded-full hover:bg-indigo-400 transition-all hover:scale-110'>Github</a>
+              <a className='p-3 bg-white rounded-full hover:bg-indigo-400 transition-all hover:scale-110'>LinkedIn</a>
+              <a className='p-3 bg-white rounded-full hover:bg-indigo-400 transition-all hover:scale-110'>Mail</a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="p-6">
-        <h2 className="text-xl font-semibold mb-2">Contact</h2>
-        <p>Email: johndoe@example.com</p>
-        <p>LinkedIn: linkedin.com/in/johndoe</p>
+
+      <section className='py-16 px-4 '>
+        <div className='max-w-4xl mx-auto'>
+          <h2 className='text-4xl font-bold bg-indigo-400  text-center bg-clip-text text-transparent mb-12 '>About Me</h2>
+          <div className=' bg-white backdrop-blur-md rounded-2xl border border-black'>
+            <p className="mt-6 text-lg text-black-300 leading-relaxed mb-6">I'm a Passionate Ml Engineer</p>
+            <p className="text-lg text-black-300 leading-relaxed mb-6">Coding Expertise</p>
+          </div>
+        </div>
       </section>
 
-      {/* Footer */}
-      <footer className="text-center p-4 text-sm text-gray-500">
-        © 2025 John Doe. All rights reserved.
-      </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Portfolio;
+export default PortfolioPage

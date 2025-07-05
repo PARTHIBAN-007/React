@@ -11,7 +11,9 @@ import DesignPage from './pages/design';
 import LandingPage from './pages/LandingPage';
 import AdminPage from './pages/AdminPage';
 import NavPage from './pages/NavPage';
-import StylishLoginPage from './pages/LoginPage';
+import Portfolio from './pages/Portfolio1';
+import PortfolioPage from './pages/Portfolio';
+// import StylishLoginPage from './pages/LoginPage';
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Hello />}></Route> 
+          <Route path='/PortfolioPage' element={<PortfolioPage />}></Route> 
+
           {/* <Route path="/main/:id" element={<Counter />}></Route> */}
           {/* <Route path="/counter" element={<Counter />}></Route> */}
           {/* <Route path="/recorder" element={<AudioRecorder />}></Route> */}
@@ -32,7 +36,9 @@ function App() {
           <Route path="/landing" element={<LandingPage />}></Route>
           <Route path="/admin" element={<AdminPage />}></Route>
           <Route path="/nav" element={<NavPage />}></Route>
-          <Route path="/login" element={<StylishLoginPage />}></Route>
+          <Route path="/Portfolio" element={<Portfolio />}></Route>
+
+          {/* <Route path="/login" element={<StylishLoginPage />}></Route> */}
         </Routes>
       </BrowserRouter>
     </>
